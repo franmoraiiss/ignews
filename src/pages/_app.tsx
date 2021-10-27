@@ -1,8 +1,9 @@
-import { AppProps } from 'next/app'
-import { Header } from '../components/Header'
-import { Provider as NextAuthProvider } from 'next-auth/client';
+import { AppProps } from "next/app";
+import { Provider as NextAuthProvider } from "next-auth/client";
 
-import '../styles/global.scss'
+import { Header } from "../components/Header";
+
+import "../styles/global.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,4 +14,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;

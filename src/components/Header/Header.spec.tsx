@@ -14,7 +14,7 @@ jest.mock('next/router', () => {
 jest.mock('next-auth/client', () => {
   return {
     useSession() {
-      return [null, false];
+      return [null, false]; // [Session, boolean] => if user is logged in, session isn't null
     }
   }
 })

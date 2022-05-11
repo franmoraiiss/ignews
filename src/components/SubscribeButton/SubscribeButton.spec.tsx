@@ -26,9 +26,10 @@ describe('SubscribeButton component', () => {
     render(<SubscribeButton />)
   
     const subscribeButton = screen.getByText('Subscribe now');
-    fireEvent.click(subscribeButton);
+    fireEvent.click(subscribeButton); 
 
-    expect(signInMocked).toHaveBeenCalled()
+    // Expected to signIn function to login with Github to have been called
+    expect(signInMocked).toHaveBeenCalled() 
   });
 
   it('redirects to posts when user already has subscriptions', () => {
@@ -36,6 +37,7 @@ describe('SubscribeButton component', () => {
     const useSessionMocked = mocked(useSession);
     const pushMock = jest.fn();
 
+    // User has to be logged in and has to have an active subscription
     useSessionMocked.mockReturnValueOnce([
       { 
         user: { 
@@ -57,6 +59,7 @@ describe('SubscribeButton component', () => {
     const subscribeButton = screen.getByText('Subscribe now');
     fireEvent.click(subscribeButton);
 
-    expect(pushMock).toHaveBeenCalledWith('/posts');
+    // expect(pushMock).toHaveBeenCalled();
+    expect(pushMock).toHaveBeenCalledWith('/posts'); // Check if function was called with parameter '/posts'
   });
 })

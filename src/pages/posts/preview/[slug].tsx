@@ -5,7 +5,7 @@ import { useSession } from "next-auth/client";
 
 import Head from "next/head";
 import Link from "next/link";
-import router from "next/router";
+import { useRouter } from "next/router";
 
 import { RichText } from "prismic-dom";
 
@@ -24,6 +24,8 @@ interface PostPreviewProps {
 
 export default function PostPreview({ post }: PostPreviewProps) {
   const [session] = useSession();
+
+  const router = useRouter()
 
   useEffect(() => {
     if (session?.activeSubscription) {
